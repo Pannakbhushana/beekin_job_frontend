@@ -2,18 +2,15 @@ import React, { useEffect, useState } from 'react';
 import {Text,Image ,Button,Link,Box } from '@chakra-ui/react';
 import Styles from "../Styles/Jobs.module.css";
 import {useParams} from "react-router-dom";
-import { useContext } from 'react';
-import { AuthContext } from '../Components/AuthContext';
-import { useNavigate } from 'react-router-dom';
-import {Alert,AlertIcon,AlertTitle,AlertDescription} from '@chakra-ui/react'
+
+
 
 
 function SingleServicePage() {
     const [data, setData]=useState({});
-    const [load, setLoad]=useState(false);
-    const {state}=useContext(AuthContext);
-    const navigate=useNavigate();
+    const [load, setLoad]=useState(false); 
     const {id}=useParams()
+   
 
     useEffect(()=>{
         getData(id);
@@ -26,7 +23,7 @@ function SingleServicePage() {
         .then((res)=>{
             setData(res[0]);
             setLoad(false);
-            console.log(res[0]);
+            // console.log(res[0]);
     
         })
         .catch((err)=>{

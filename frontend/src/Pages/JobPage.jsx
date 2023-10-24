@@ -9,6 +9,7 @@ import { getTodoSuccessAction } from '../Redux/action';
 function JobPage() {
     const [load, setLoad]=useState(false);
     const [page, setPage]=useState(1);
+    
     const {data}=useSelector((store)=>{
         return store;
     })
@@ -50,7 +51,7 @@ function JobPage() {
      <div className={Styles.leftContainer} >
 
         {data.length && data.map((el)=>{
-            return  <Link href={`/jobs/${el._id}`} key={el._id}>
+            return  <Link href={`/singlepage/${el._id}`} key={el._id}>
             <div className={Styles.leftChild} >
                 <div style={{display:"flex",width:"100%",justifyContent:"space-around"}}>
                     <div style={{width:'70%'}}>
